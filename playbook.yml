@@ -13,6 +13,7 @@
         update_cache: yes
         state: present
     - name: Download metabase
+      become: yes
       get_url:
         url: http://downloads.metabase.com/v0.27.1/metabase.jar
         dest: /opt/metabase/metabase.jar
