@@ -1,0 +1,25 @@
+---
+- name: Install Metabase
+  hosts: webservers
+  become: true
+  tasks:
+    - name: add apt repo
+      apt_repository:
+        repo: 'ppa:openjdk-r/ppa'
+        state: present
+    - name: Install Java
+      apt:
+        name: openjdk-8-jdk
+        update_cache: yes
+        state: present
+    - name: Download metabase
+      get_url:
+        url: http://downloads.metabase.com/v0.27.1/metabase.jar
+        dest: /opt/metabase/metabase.jar
+        mode: 0755
+    - name: Create backup dir
+      file:
+        path: /backup
+        state: directory
+        mode: 0755
+        owner: ubuntu
