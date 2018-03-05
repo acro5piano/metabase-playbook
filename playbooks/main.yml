@@ -1,0 +1,4 @@
+- import_playbook: mysql.yml
+  tags: mysql
+- import_playbook: metabase.yml
+  tags: metabase

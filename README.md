@@ -1,4 +1,5 @@
 # metabase-playbook
+
 Ansible playbook for setup metabase env
 
 # Usage
@@ -17,13 +18,7 @@ sudo sh -c 'apt -y update && apt -y upgrade && apt -y install python'
 Then
 
 ```
-ansible-playbook --private-key=/path/to/your/key playbook.yml
+ansible-playbook --private-key=/path/to/your/key playbooks/main.yml
 ```
 
-Then login the ec2 instance and run
-
-```
-nohup java -jar /opt/metabase/metabase.jar &
-```
-
-TODO: use supervisord
+Then open http://54.250.172.28:3000 and play with metabase.

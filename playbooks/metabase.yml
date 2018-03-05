@@ -38,5 +38,5 @@
     - name: start metabase
       systemd:
         name: metabase
-        state: started
+        state: restarted
         enabled: True
