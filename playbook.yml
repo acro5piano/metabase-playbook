@@ -12,6 +12,12 @@
         name: openjdk-8-jdk
         update_cache: yes
         state: present
+    - name: Create dir
+      file:
+        path: /opt/metabase
+        state: directory
+        mode: 0755
+        owner: ubuntu
     - name: Download metabase
       become: yes
       get_url:
