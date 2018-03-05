@@ -24,3 +24,13 @@
         state: directory
         mode: 0755
         owner: ubuntu
+    - name: add metabase to service
+      copy:
+        src: metabase.service
+        dest: /etc/systemd/system/metabase.service
+        mode: 0755
+    - name: start metabase
+      systemd:
+        name: metabase
+        state: started
+        enabled: True

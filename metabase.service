@@ -1,0 +1,16 @@
+[Unit]
+Description=Metabase - Data visualization platform
+After=network.target remote-fs.target
+
+[Service]
+WorkingDirectory=/home/ubuntu
+ExecStart=/usr/bin/java -jar /opt/metabase/metabase.jar
+ExecStop=/bin/true
+Restart=always
+Type=simple
+User=ubuntu
+Group=ubuntu
+StartLimitBurst=50
+
+[Install]
+WantedBy=multi-user.target
