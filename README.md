@@ -1,21 +1,38 @@
-# metabase-playbook
+# Metabase Playbook
 
-Ansible playbook for setup metabase env
+Ansible playbook for setup metabase.
 
-# Usage
+# Feature
 
-setup aws EC2.
+- Metabase 0.27.1
+- Store Metabase data to MySQL
+- Daemonize Metabase using Systemd
+- Use Ubuntu 16.04 as base image
 
-Then update `provision/hosts` with the ip `54.250.172.28` (just example)
+# Setup
 
-Then
+**Step 1**
+
+Launch Ubuntu 16.04 server on AWS EC2 or something.
+
+If you use AWS, open `3000` to the public in SecurityGroup setting.
+
+**Step 2**
+
+Update `provision/hosts` with the ip of the instance just launched.
+
+e.g.) `54.250.172.28`
+
+Then run
 
 ```
-ssh ubuntu@54.250.172.28
+ssh -i /path/to/your/key ubuntu@54.250.172.28
 sudo sh -c 'apt -y update && apt -y upgrade && apt -y install python'
 ```
 
-Then
+**Step 3**
+
+Run Ansible.
 
 ```
 ansible-playbook \
