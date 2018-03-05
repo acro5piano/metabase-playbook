@@ -11,15 +11,15 @@ Ansible playbook for setup metabase.
 
 # Setup
 
-**Step 1**
+## Step 1
 
 Launch Ubuntu 16.04 server on AWS EC2 or something.
 
 If you use AWS, open `3000` to the public in SecurityGroup setting.
 
-**Step 2**
+## Step 2
 
-Update `provision/hosts` with the ip of the instance just launched.
+Update `hosts` with the ip of the instance just launched.
 
 e.g.) `54.250.172.28`
 
@@ -30,7 +30,7 @@ ssh -i /path/to/your/key ubuntu@54.250.172.28
 sudo sh -c 'apt -y update && apt -y upgrade && apt -y install python'
 ```
 
-**Step 3**
+## Step 3
 
 Run Ansible.
 
