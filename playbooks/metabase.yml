@@ -30,9 +30,14 @@
         state: directory
         mode: 0755
         owner: ubuntu
+    - name: add env file
+      copy:
+        src: ../files/metabase-environment
+        dest: /etc/metabase-environment
+        mode: 0755
     - name: add metabase to service
       copy:
-        src: metabase.service
+        src: ../files/metabase.service
         dest: /etc/systemd/system/metabase.service
         mode: 0755
     - name: start metabase

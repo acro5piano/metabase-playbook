@@ -18,7 +18,10 @@ sudo sh -c 'apt -y update && apt -y upgrade && apt -y install python'
 Then
 
 ```
-ansible-playbook --private-key=/path/to/your/key playbooks/main.yml
+ansible-playbook \
+  --private-key=/path/to/your/key \
+  --extra-vars MB_DB_PASS="secret" \
+  playbooks/main.yml
 ```
 
 Then open http://54.250.172.28:3000 and play with metabase.

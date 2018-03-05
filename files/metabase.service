@@ -3,6 +3,7 @@ Description=Metabase - Data visualization platform
 After=network.target remote-fs.target
 
 [Service]
+EnvironmentFile=/etc/metabase-environment
 WorkingDirectory=/home/ubuntu
 ExecStart=/usr/bin/java -jar /opt/metabase/metabase.jar
 ExecStop=/bin/true
