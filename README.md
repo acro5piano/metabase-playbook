@@ -37,7 +37,7 @@ Run Ansible.
 ```
 ansible-playbook \
   --private-key=/path/to/your/key \
-  --extra-vars 'MB_DB_PASS="secret"' \
+  --extra-vars 'MB_DB_PASS="<YOUR PASSWORD>"' \
   playbooks/main.yml
 ```
 
