@@ -25,13 +25,15 @@ e.g.)
 
 ```
 [webservers]
-54.250.172.28
+YOUR_IP_ADDRESS
 ```
+
+(see `hosts.example`)
 
 Then run
 
 ```
-ssh -i /path/to/your/key ubuntu@54.250.172.28
+ssh -i /path/to/your/key ubuntu@YOUR_IP_ADDRESS
 sudo sh -c 'apt -y update && apt -y upgrade && apt -y install python'
 ```
 
@@ -46,4 +48,4 @@ ansible-playbook \
   playbooks/main.yml
 ```
 
-Then open http://54.250.172.28:3000 and play with metabase.
+Then open http://YOUR_IP_ADDRESS:3000 and play with metabase.
