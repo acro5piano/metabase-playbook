@@ -4,10 +4,10 @@ Ansible playbook for setup metabase.
 
 # Feature
 
-- Metabase 0.27.1
+- Metabase 0.30.4
 - Store Metabase data to MySQL
 - Daemonize Metabase using Systemd
-- Use Ubuntu 16.04 as base image
+- Use Ubuntu 18.04 as base image
 
 # Setup
 
@@ -19,9 +19,14 @@ If you use AWS, open `3000` to the public in SecurityGroup setting.
 
 ## Step 2
 
-Update `hosts` with the ip of the instance just launched.
+Create a file `hosts` with the ip of the instance just launched.
 
-e.g.) `54.250.172.28`
+e.g.)
+
+```
+[webservers]
+54.250.172.28
+```
 
 Then run
 
