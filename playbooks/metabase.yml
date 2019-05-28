@@ -21,7 +21,7 @@
     - name: Download metabase
       become: yes
       get_url:
-        url: http://downloads.metabase.com/v0.30.4/metabase.jar
+        url: http://downloads.metabase.com/v0.32.8/metabase.jar
         dest: /opt/metabase/metabase.jar
         mode: 0755
     - name: Create backup dir
