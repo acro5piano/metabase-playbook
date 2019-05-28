@@ -33,8 +33,7 @@ YOUR_IP_ADDRESS
 Then run
 
 ```
-ssh -i /path/to/your/key ubuntu@YOUR_IP_ADDRESS
-sudo sh -c 'apt -y update && apt -y upgrade && apt -y install python'
+ssh -i /path/to/your/key ubuntu@YOUR_IP_ADDRESS 'sudo sh -c "apt -y update && apt -y upgrade && apt -y install python"'
 ```
 
 ## Step 3
