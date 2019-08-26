@@ -30,16 +30,10 @@
         state: directory
         mode: 0755
         owner: ubuntu
-    - name: add env file
-      copy:
-        src: ../files/metabase-environment
+    - template:
+        src: ../templates/metabase-environment.j2
         dest: /etc/metabase-environment
         mode: 0755
-    - name: update password
-      lineinfile:
-        path: /etc/metabase-environment
-        regexp: '^MB_DB_PASS='
-        line: MB_DB_PASS="{{ MB_DB_PASS }}"
     - name: add metabase to service
       copy:
         src: ../files/metabase.service
