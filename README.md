@@ -25,16 +25,14 @@ e.g.)
 
 ```
 [webservers]
-YOUR_IP_ADDRESS
+ubuntu@YOUR_IP_ADDRESS
+
+# ...
 ```
 
 (see `hosts.example`)
 
 Then run
-
-```
-ssh -i /path/to/your/key ubuntu@YOUR_IP_ADDRESS 'sudo sh -c "apt -y update && apt -y install python"'
-```
 
 ## Step 3
 

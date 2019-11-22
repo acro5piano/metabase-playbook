@@ -1,2 +1,5 @@
 [webservers]
-YOUR_IP_ADDRESS
+ubuntu@YOUR_IP_ADDRESS
+
+[webservers:vars]
+ansible_python_interpreter = /usr/bin/python3
