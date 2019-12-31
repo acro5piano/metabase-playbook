@@ -2,7 +2,7 @@
 
 Ansible playbook for setup metabase.
 
-# Feature
+# Features
 
 - Metabase 0.30.4
 - Store Metabase data to MySQL
