@@ -12,13 +12,13 @@ Ansible playbook for setup metabase.
 
 # Setup
 
-## Step 1
+### Step 1
 
 Launch Ubuntu 20.04 server on AWS EC2 or something.
 
 If you use AWS, open port `80` to the public in SecurityGroup setting.
 
-## Step 2
+### Step 2
 
 Run Ansible.
 
@@ -36,10 +36,10 @@ Note that:
 - Replace `/path/to/private/key` with your instance's private key.
 - PostgreSQL's password is `postgres`. You must not expose port of `5432`.
 
-## Step 3
+### Step 3
 
 Open http://YOUR_IP_ADDRESS and play with metabase.
 
-# Go futher
+# Go further
 
-You might create a proxy to http://YOUR_IP_ADDRESS such as Cloudflare or CloudFront. Use whatever you want.
+You might create a proxy to http://YOUR_IP_ADDRESS such as Cloudflare or CloudFront in order to improve security. Use whatever you want.
