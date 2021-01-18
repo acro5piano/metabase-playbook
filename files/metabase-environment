@@ -1,8 +1,9 @@
 #!/bin/sh
 
+MB_JETTY_PORT=80
 MB_DB_TYPE=postgres
 MB_DB_DBNAME=metabase
-MB_DB_PORT=3306
+MB_DB_PORT=5432
 MB_DB_USER=metabase
 MB_DB_PASS=metabase
 MB_DB_HOST=localhost

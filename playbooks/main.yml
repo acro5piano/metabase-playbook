@@ -1,3 +1,6 @@
+- import_playbook: fail2ban.yml
+  tags: fail2ban
+
 - hosts: all
   roles:
     - role: geerlingguy.postgresql
@@ -5,7 +8,9 @@
   vars:
     postgresql_databases:
       - name: metabase
-        login_password: metabase
-        login_user: metabase
+    postgresql_users:
+      - name: metabase
+        password: metabase
+
 - import_playbook: metabase.yml
   tags: metabase

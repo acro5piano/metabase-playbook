@@ -1,0 +1,10 @@
+---
+- name: Install fail2ban
+  hosts: all
+  become: true
+  tasks:
+    - name: Install fail2ban
+      apt:
+        name: fail2ban
+        update_cache: yes
+        state: present

@@ -8,6 +8,7 @@ Ansible playbook for setup metabase.
 - Store Metabase data to PostgreSQL
 - Daemonize Metabase using Systemd
 - Use Ubuntu 20.04 as base image
+- Runs on port 80 by defualt which is useful for proxying
 
 # Setup
 
@@ -15,7 +16,7 @@ Ansible playbook for setup metabase.
 
 Launch Ubuntu 20.04 server on AWS EC2 or something.
 
-If you use AWS, open `3000` to the public in SecurityGroup setting.
+If you use AWS, open port `80` to the public in SecurityGroup setting.
 
 ## Step 2
 
@@ -37,4 +38,8 @@ Note that:
 
 ## Step 3
 
-Open http://YOUR_IP_ADDRESS:3000 and play with metabase.
+Open http://YOUR_IP_ADDRESS and play with metabase.
+
+# Go futher
+
+You might create a proxy to http://YOUR_IP_ADDRESS such as Cloudflare or CloudFront. Use whatever you want.
