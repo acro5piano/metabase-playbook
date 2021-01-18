@@ -1,4 +1,11 @@
-- import_playbook: mysql.yml
-  tags: mysql
+- hosts: all
+  roles:
+    - role: geerlingguy.postgresql
+      become: yes
+  vars:
+    postgresql_databases:
+      - name: metabase
+        login_password: metabase
+        login_user: metabase
 - import_playbook: metabase.yml
   tags: metabase

@@ -1,6 +1,6 @@
 ---
 - name: Install Metabase
-  hosts: webservers
+  hosts: all
   become: true
   tasks:
     - name: add apt repo
@@ -21,7 +21,7 @@
     - name: Download metabase
       become: yes
       get_url:
-        url: http://downloads.metabase.com/v0.32.8/metabase.jar
+        url: http://downloads.metabase.com/v0.37.6/metabase.jar
         dest: /opt/metabase/metabase.jar
         mode: 0755
     - name: Create backup dir
@@ -30,8 +30,9 @@
         state: directory
         mode: 0755
         owner: ubuntu
-    - template:
-        src: ../templates/metabase-environment.j2
+    - name: add metabase environment variables
+      copy:
+        src: ../files/metabase-environment
         dest: /etc/metabase-environment
         mode: 0755
     - name: add metabase to service

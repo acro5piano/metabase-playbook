@@ -1,23 +1,21 @@
 ---
 - name: Install Mysql
-  hosts: webservers
+  hosts: all
   become: true
   tasks:
     - apt:
-        name: mysql-server
+        name:
+          - mysql-server
+          - libmysqlclient-dev
+          - python3-pip
         state: present
+        update_cache: yes
+    - pip:
+        name: MySQL-python
     - systemd:
         name: mysql
         state: restarted
         enabled: True
-    - apt:
-        name: libmysqlclient-dev
-        state: present
-    - apt:
-        name: python-pip
-        state: present
-    - pip:
-        name: MySQL-python
     - name: Create a new database with name 'metabase'
       mysql_db:
         name: metabase
@@ -25,7 +23,7 @@
         state: present
     - mysql_user:
         name: metabase
-        password: "{{ MB_DB_PASS }}"
+        password: metabase
         host: '%'
         priv: '*.*:ALL'
         state: present

@@ -1,5 +1,0 @@
-[webservers]
-ubuntu@YOUR_IP_ADDRESS
-
-[webservers:vars]
-ansible_python_interpreter = /usr/bin/python3

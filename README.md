@@ -4,45 +4,35 @@ Ansible playbook for setup metabase.
 
 # Features
 
-- Metabase 0.30.4
-- Store Metabase data to MySQL
+- Metabase 0.37.6
+- Store Metabase data to PostgreSQL
 - Daemonize Metabase using Systemd
-- Use Ubuntu 18.04 as base image
+- Use Ubuntu 20.04 as base image
 
 # Setup
 
 ## Step 1
 
-Launch Ubuntu 16.04 server on AWS EC2 or something.
+Launch Ubuntu 20.04 server on AWS EC2 or something.
 
 If you use AWS, open `3000` to the public in SecurityGroup setting.
 
 ## Step 2
 
-Create a file `hosts` with the ip of the instance just launched.
-
-e.g.)
-
-```
-[webservers]
-ubuntu@YOUR_IP_ADDRESS
-
-# ...
-```
-
-(see `hosts.example`)
-
-Then run
-
-## Step 3
-
 Run Ansible.
 
 ```
 ansible-playbook \
-  --private-key=/path/to/your/key \
-  --extra-vars 'MB_DB_PASS="<YOUR PASSWORD>"' \
-  playbooks/main.yml
+    -i 11.22.333.444, \
+    --private-key /path/to/private/key \
+    playbooks/main.yml
 ```
+
+Note that:
+
+- Replace `11.22.333.444` with your instance's IP address.
+    - `,` is needed after IP address. See [this](https://stackoverflow.com/questions/17188147/how-to-run-ansible-without-specifying-the-inventory-but-the-host-directly)
+- Replace `/path/to/private/key` with your instance's private key.
+- PostgreSQL's password is `postgres`. You must not expose port of `5432`.
 
 Then open http://YOUR_IP_ADDRESS:3000 and play with metabase.
