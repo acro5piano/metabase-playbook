@@ -35,4 +35,6 @@ Note that:
 - Replace `/path/to/private/key` with your instance's private key.
 - PostgreSQL's password is `postgres`. You must not expose port of `5432`.
 
-Then open http://YOUR_IP_ADDRESS:3000 and play with metabase.
+## Step 3
+
+Open http://YOUR_IP_ADDRESS:3000 and play with metabase.
