@@ -9,6 +9,7 @@ Ansible playbook for setup metabase.
 - Daemonize Metabase using Systemd
 - Use Ubuntu 20.04 as base image
 - Runs on port 80 by defualt which is useful for proxying
+- Installs Fail2ban for security
 
 # Setup
 
