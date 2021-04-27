@@ -4,7 +4,7 @@ Ansible playbook for setup metabase.
 
 # Features
 
-- Metabase 0.37.6
+- Metabase 0.39.0.1
 - Store Metabase data to PostgreSQL
 - Daemonize Metabase using Systemd
 - Use Ubuntu 20.04 as base image
@@ -33,7 +33,7 @@ ansible-playbook \
 Note that:
 
 - Replace `11.22.333.444` with your instance's IP address.
-    - `,` is needed after IP address. See [this](https://stackoverflow.com/questions/17188147/how-to-run-ansible-without-specifying-the-inventory-but-the-host-directly)
+  - `,` is needed after IP address. See [this](https://stackoverflow.com/questions/17188147/how-to-run-ansible-without-specifying-the-inventory-but-the-host-directly)
 - Replace `/path/to/private/key` with your instance's private key.
 - PostgreSQL's password is `postgres`. You must not expose port of `5432`.
 
