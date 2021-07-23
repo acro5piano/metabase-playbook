@@ -4,7 +4,7 @@ Ansible playbook for setup metabase.
 
 # Features
 
-- Metabase 0.39.0.1
+- Metabase v0.40.1
 - Store Metabase data to PostgreSQL
 - Daemonize Metabase using Systemd
 - Use Ubuntu 20.04 as base image
@@ -12,6 +12,10 @@ Ansible playbook for setup metabase.
 - Installs Fail2ban for security
 
 # Setup
+
+### Step 0
+
+Clone this repository.
 
 ### Step 1
 
